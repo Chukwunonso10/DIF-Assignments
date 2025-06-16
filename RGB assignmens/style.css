@@ -1,0 +1,247 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f3e8ff, #dbeafe, #e0e7ff);
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.icon {
+    font-size: 1.25rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #374151;
+    color: #374151;
+}
+
+.btn-outline:hover {
+    background: #374151;
+    color: white;
+}
+
+.btn-solid {
+    background: #374151;
+    color: white;
+}
+
+.btn-solid:hover {
+    background: #1f2937;
+}
+
+/* Target card */
+.target-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 2px solid #e5e7eb;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.target-card h2 {
+    font-size: 1.5rem;
+    color: #374151;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.rgb-display {
+    font-size: 2.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #1f2937;
+    background: #f3f4f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+/* Game message */
+.message {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.message.info {
+    color: #2563eb;
+}
+
+.message.success {
+    color: #16a34a;
+}
+
+.message.error {
+    color: #dc2626;
+}
+
+/* Color grid */
+.color-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.color-grid.easy {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.color-grid.hard {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.color-box {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.color-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.color-square {
+    width: 100%;
+    height: 160px;
+    transition: all 0.3s ease;
+}
+
+.color-label {
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-family: 'Courier New', monospace;
+    color: #6b7280;
+    background: white;
+}
+
+/* Rules card */
+.rules-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+}
+
+.rules-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    color: #374151;
+}
+
+.rule h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.rule p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .rgb-display {
+        font-size: 1.5rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .color-grid.easy {
+        grid-template-columns: 1fr;
+    }
+    
+    .color-grid.hard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
